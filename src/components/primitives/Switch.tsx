@@ -1,0 +1,27 @@
+import * as React from "react";
+import * as SwitchPrimitive from "@radix-ui/react-switch";
+import { cn } from "@/core/utils/cn";
+
+export const NcSwitch = React.forwardRef<
+  React.ElementRef<typeof SwitchPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <SwitchPrimitive.Root
+    ref={ref}
+    className={cn(
+      "peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border border-transparent transition-colors",
+      "bg-border-strong data-[state=checked]:bg-[image:var(--nc-grad)]",
+      "focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
+      className,
+    )}
+    {...props}
+  >
+    <SwitchPrimitive.Thumb
+      className={cn(
+        "pointer-events-none block h-3.5 w-3.5 translate-x-[3px] rounded-full bg-white shadow-md",
+        "transition-transform data-[state=checked]:translate-x-[19px]",
+      )}
+    />
+  </SwitchPrimitive.Root>
+));
+NcSwitch.displayName = "NcSwitch";
