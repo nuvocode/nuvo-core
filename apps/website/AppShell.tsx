@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Command as CommandIcon, Github, Moon, Sun, SunMoon } from "lucide-react";
-import { cn } from "@nuvo-code/core";
 import {
   NcButton,
   NcBadge,
@@ -54,17 +53,17 @@ export function AppShell() {
   return (
     <NcTooltipProvider delayDuration={150}>
       <div className="flex h-screen flex-col overflow-hidden bg-bg text-fg">
-        <header className={cn(
+        <header className={[
           "flex h-[54px] shrink-0 items-center justify-between border-b px-5 backdrop-blur-[14px] transition-colors duration-300",
           "bg-bg/80 border-border-subtle",
           "theme-dark:bg-[rgb(9_9_11_/_0.78)] theme-dark:border-border-subtle",
           "theme-soft-dark:bg-[rgb(14_14_18_/_0.78)] theme-soft-dark:border-border-subtle",
           "theme-light:glass-light theme-light:border-border-strong",
-        )}>
+        ].join(" ")}>
           <div className="flex items-center gap-3">
             <NcWordmark size={20} />
             <span className="hidden text-[12px] text-fg-subtle md:inline">Design System</span>
-            <NcBadge tone="neutral" size="sm">v0.3 · INTERNAL</NcBadge>
+            <NcBadge tone="neutral" size="sm">v{__NUVO_VERSION__} · INTERNAL</NcBadge>
           </div>
 
           <button

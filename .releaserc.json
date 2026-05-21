@@ -28,6 +28,13 @@
     ["@semantic-release/npm", {
       "pkgRoot": "packages/core"
     }],
-    "@semantic-release/github"
+    ["@semantic-release/exec", {
+      "prepareCmd": "echo 'export const NUVO_CORE_VERSION = \"${nextRelease.version}\";' > packages/core/src/version.ts"
+    }],
+    ["@semantic-release/github", {
+      "assets": [
+        { "path": "packages/core/dist", "label": "Distribution files" }
+      ]
+    }]
   ]
 }

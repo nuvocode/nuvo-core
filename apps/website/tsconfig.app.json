@@ -21,11 +21,13 @@
       "@nuvo-code/core/core": ["../packages/core/dist/core/index"],
       "@nuvo-code/core/core/*": ["../packages/core/dist/core/*"],
       "@nuvo-code/core/*": ["../packages/core/dist/*"]
-    }
+    },
+    "types": ["vite/client"]
   },
   "include": [
     "*.tsx",
     "pages/**/*.tsx",
-    "registry/**/*.tsx"
+    "registry/**/*.tsx",
+    "vite-env.d.ts"
   ]
 }
