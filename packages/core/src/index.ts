@@ -1,5 +1,5 @@
 // Nuvo Core - Design System
-// @nuvocode/core
+// @nuvo-code/core
 
 import "./styles/globals.css";
 

@@ -1,8 +1,8 @@
 import { Search } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
 import { Showcase, Subsection } from "../registry/Showcase";
-import { NcInput, NcTextarea } from "@nuvocode/core";
-import { NcSwitch } from "@nuvocode/core";
+import { NcInput, NcTextarea } from "@nuvo-code/core";
+import { NcSwitch } from "@nuvo-code/core";
 
 export function InputsPage() {
   return (

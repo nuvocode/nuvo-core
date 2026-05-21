@@ -1,5 +1,5 @@
 // Nuvo Core - Core Utilities
-// @nuvocode/core/core
+// @nuvo-code/core/core
 
 export * from "./themes";
 export * from "./tokens";

@@ -1,7 +1,7 @@
 import { Activity, Box, Eye, GitBranch, LayoutGrid, Server, Settings } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
 import { Subsection } from "../registry/Showcase";
-import { NcDot, NcStatBlock } from "@nuvocode/core";
+import { NcDot, NcStatBlock } from "@nuvo-code/core";
 
 export function LayoutsPage() {
   return (

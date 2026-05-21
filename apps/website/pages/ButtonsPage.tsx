@@ -1,7 +1,7 @@
 import { ArrowRight, Plus, Trash2 } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
 import { PropTable, Showcase, Subsection } from "../registry/Showcase";
-import { NcButton } from "@nuvocode/core";
+import { NcButton } from "@nuvo-code/core";
 
 export function ButtonsPage() {
   return (

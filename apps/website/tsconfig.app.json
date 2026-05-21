@@ -17,10 +17,10 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@nuvocode/core": ["../packages/core/dist"],
-      "@nuvocode/core/core": ["../packages/core/dist/core/index"],
-      "@nuvocode/core/core/*": ["../packages/core/dist/core/*"],
-      "@nuvocode/core/*": ["../packages/core/dist/*"]
+      "@nuvo-code/core": ["../packages/core/dist"],
+      "@nuvo-code/core/core": ["../packages/core/dist/core/index"],
+      "@nuvo-code/core/core/*": ["../packages/core/dist/core/*"],
+      "@nuvo-code/core/*": ["../packages/core/dist/*"]
     }
   },
   "include": [

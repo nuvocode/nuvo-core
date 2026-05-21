@@ -1,8 +1,8 @@
 import { AlertTriangle, Box, CheckCircle2, Info, XCircle } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
 import { Showcase, Subsection } from "../registry/Showcase";
-import { NcButton } from "@nuvocode/core";
-import { NcEmptyState } from "@nuvocode/core";
+import { NcButton } from "@nuvo-code/core";
+import { NcEmptyState } from "@nuvo-code/core";
 
 interface AlertProps {
   tone: "info" | "success" | "warning" | "error";

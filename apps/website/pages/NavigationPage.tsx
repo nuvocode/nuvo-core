@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Activity, Box, GitBranch, LayoutGrid, Settings, Users } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
 import { Subsection } from "../registry/Showcase";
-import { NcSidebar } from "@nuvocode/core";
-import { NcTabs, NcTabsContent, NcTabsList, NcTabsTrigger } from "@nuvocode/core";
-import { NcTag } from "@nuvocode/core";
+import { NcSidebar } from "@nuvo-code/core";
+import { NcTabs, NcTabsContent, NcTabsList, NcTabsTrigger } from "@nuvo-code/core";
+import { NcTag } from "@nuvo-code/core";
 
 export function NavigationPage() {
   const [active, setActive] = useState("overview");

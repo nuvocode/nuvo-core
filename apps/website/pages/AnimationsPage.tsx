@@ -1,6 +1,6 @@
 import { PageLayout } from "../registry/PageLayout";
 import { Subsection } from "../registry/Showcase";
-import { NcDot } from "@nuvocode/core";
+import { NcDot } from "@nuvo-code/core";
 
 export function AnimationsPage() {
   return (

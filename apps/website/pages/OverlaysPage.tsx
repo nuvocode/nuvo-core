@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Activity, Cloud, Command as CommandIcon, GitBranch, LayoutGrid, Settings, User } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
 import { Showcase, Subsection } from "../registry/Showcase";
-import { NcButton } from "@nuvocode/core";
-import { NcDialog, NcDialogContent, NcDialogDescription, NcDialogHeader, NcDialogTitle, NcDialogTrigger } from "@nuvocode/core";
-import { NcDropdownMenu, NcDropdownMenuContent, NcDropdownMenuItem, NcDropdownMenuLabel, NcDropdownMenuSeparator, NcDropdownMenuShortcut, NcDropdownMenuTrigger } from "@nuvocode/core";
-import { NcTooltip, NcTooltipContent, NcTooltipProvider, NcTooltipTrigger } from "@nuvocode/core";
-import { NcCommandMenu } from "@nuvocode/core";
+import { NcButton } from "@nuvo-code/core";
+import { NcDialog, NcDialogContent, NcDialogDescription, NcDialogHeader, NcDialogTitle, NcDialogTrigger } from "@nuvo-code/core";
+import { NcDropdownMenu, NcDropdownMenuContent, NcDropdownMenuItem, NcDropdownMenuLabel, NcDropdownMenuSeparator, NcDropdownMenuShortcut, NcDropdownMenuTrigger } from "@nuvo-code/core";
+import { NcTooltip, NcTooltipContent, NcTooltipProvider, NcTooltipTrigger } from "@nuvo-code/core";
+import { NcCommandMenu } from "@nuvo-code/core";
 
 export function OverlaysPage() {
   const [cmdOpen, setCmdOpen] = useState(false);

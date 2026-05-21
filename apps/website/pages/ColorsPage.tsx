@@ -1,6 +1,6 @@
 import { PageLayout } from "../registry/PageLayout";
 import { Subsection } from "../registry/Showcase";
-import { colors } from "@nuvocode/core/core";
+import { colors } from "@nuvo-code/core/core";
 
 const surfaces = [
   { name: "bg", value: colors.surface.bg, hex: "#09090b", purpose: "Page background" },

@@ -9,8 +9,8 @@ import {
   NcWordmark,
   NcCommandMenu,
   NcTooltipProvider,
-} from "@nuvocode/core";
-import { useTheme, themes, type ThemeName } from "@nuvocode/core/core";
+} from "@nuvo-code/core";
+import { useTheme, themes, type ThemeName } from "@nuvo-code/core/core";
 import { groups, pages, pagesBySlug } from "./registry/pages";
 
 function readHashSlug() {

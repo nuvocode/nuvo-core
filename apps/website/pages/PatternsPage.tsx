@@ -1,9 +1,9 @@
 import { PageLayout } from "../registry/PageLayout";
 import { Subsection } from "../registry/Showcase";
-import { NcDot } from "@nuvocode/core";
-import { NcTag } from "@nuvocode/core";
-import { NcDeployStatus } from "@nuvocode/core";
-import { NcTerminal } from "@nuvocode/core";
+import { NcDot } from "@nuvo-code/core";
+import { NcTag } from "@nuvo-code/core";
+import { NcDeployStatus } from "@nuvo-code/core";
+import { NcTerminal } from "@nuvo-code/core";
 
 export function PatternsPage() {
   return (

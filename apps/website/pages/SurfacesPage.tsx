@@ -1,8 +1,8 @@
 import { PageLayout } from "../registry/PageLayout";
 import { Showcase, Subsection } from "../registry/Showcase";
-import { NcCard, NcCardContent, NcCardDescription, NcCardFooter, NcCardHeader, NcCardTitle } from "@nuvocode/core";
-import { NcGlowOrb } from "@nuvocode/core";
-import { NcGridBackground } from "@nuvocode/core";
+import { NcCard, NcCardContent, NcCardDescription, NcCardFooter, NcCardHeader, NcCardTitle } from "@nuvo-code/core";
+import { NcGlowOrb } from "@nuvo-code/core";
+import { NcGridBackground } from "@nuvo-code/core";
 
 export function SurfacesPage() {
   return (

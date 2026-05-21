@@ -1,6 +1,6 @@
 import * as React from "react";
-import { NcCodeBlock } from "@nuvocode/core";
-import { cn } from "@nuvocode/core/core";
+import { NcCodeBlock } from "@nuvo-code/core";
+import { cn } from "@nuvo-code/core/core";
 
 interface ShowcaseProps {
   title?: string;

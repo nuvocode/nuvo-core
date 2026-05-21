@@ -1,10 +1,10 @@
 import { PageLayout } from "../registry/PageLayout";
 import { Showcase, Subsection } from "../registry/Showcase";
-import { NcBadge } from "@nuvocode/core";
-import { NcDot } from "@nuvocode/core";
-import { NcProgressBar } from "@nuvocode/core";
-import { NcTag } from "@nuvocode/core";
-import { NcStatBlock } from "@nuvocode/core";
+import { NcBadge } from "@nuvo-code/core";
+import { NcDot } from "@nuvo-code/core";
+import { NcProgressBar } from "@nuvo-code/core";
+import { NcTag } from "@nuvo-code/core";
+import { NcStatBlock } from "@nuvo-code/core";
 
 const tableRows = [
   { id: "dpl_a3f8c12", svc: "launchpad-api", env: "production", status: "ready", time: "2m ago" },

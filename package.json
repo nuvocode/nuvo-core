@@ -1,10 +1,10 @@
 {
-  "name": "nuvocode-monorepo",
+  "name": "nuvo-code-monorepo",
   "private": true,
   "scripts": {
-    "dev:core": "pnpm --filter @nuvocode/core dev",
+    "dev:core": "pnpm --filter @nuvo-code/core dev",
     "dev:website": "pnpm --filter website dev",
-    "build:core": "pnpm --filter @nuvocode/core build:lib",
+    "build:core": "pnpm --filter @nuvo-code/core build:lib",
     "build:website": "pnpm --filter website build",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck"

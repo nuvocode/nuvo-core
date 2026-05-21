@@ -9,7 +9,7 @@ Radix UI · CVA · Lucide**.
 ## Installation
 
 ```bash
-pnpm add @nuvocode/core
+pnpm add @nuvo-code/core
 ```
 
 ## Quick Start
@@ -17,7 +17,7 @@ pnpm add @nuvocode/core
 ### 1. Import Components
 
 ```tsx
-import { NcButton, NcCard, NcSidebar } from '@nuvocode/core';
+import { NcButton, NcCard, NcSidebar } from '@nuvo-code/core';
 ```
 
 ### 2. Import Styles
@@ -25,13 +25,13 @@ import { NcButton, NcCard, NcSidebar } from '@nuvocode/core';
 Add this to your root file (e.g., `main.tsx` or `App.tsx`):
 
 ```tsx
-import '@nuvocode/core/styles.css';
+import '@nuvo-code/core/styles.css';
 ```
 
 ### 3. Use Theme Hook (Optional)
 
 ```tsx
-import { useTheme } from '@nuvocode/core/core';
+import { useTheme } from '@nuvo-code/core/core';
 
 function App() {
   const { theme, setTheme } = useTheme();
@@ -50,7 +50,7 @@ function App() {
 ```
 nuvo-core/
 ├── packages/
-│   └── core/           # NPM package (@nuvocode/core)
+│   └── core/           # NPM package (@nuvo-code/core)
 │       ├── src/
 │       ├── package.json
 │       └── vite.lib.config.ts
@@ -95,7 +95,7 @@ pnpm build:website
 
 ## Architecture
 
-### Core Package (`@nuvocode/core`)
+### Core Package (`@nuvo-code/core`)
 
 ```
 packages/core/src/
@@ -117,7 +117,7 @@ The website consumes the core package via workspace linking:
 ```json
 {
   "dependencies": {
-    "@nuvocode/core": "workspace:*"
+    "@nuvo-code/core": "workspace:*"
   }
 }
 ```
@@ -205,7 +205,7 @@ Publishing is automated via GitHub Actions and Semantic Release:
 
 3. GitHub Actions will:
    - Run tests and build
-   - Publish to npm (`@nuvocode/core`)
+   - Publish to npm (`@nuvo-code/core`)
    - Create GitHub release
    - Update CHANGELOG
 
@@ -215,4 +215,4 @@ MIT © Nuvo Code
 
 ---
 
-@nuvocode/core · v0.1.0 · 2026
+@nuvo-code/core · v0.1.0 · 2026

@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "../../packages/core/src"),
-      "@nuvocode/core": path.resolve(__dirname, "../../packages/core/src"),
+      "@nuvo-code/core": path.resolve(__dirname, "../../packages/core/src"),
     },
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },

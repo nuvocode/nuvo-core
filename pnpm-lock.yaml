@@ -20,7 +20,7 @@ importers:
 
   apps/website:
     dependencies:
-      '@nuvocode/core':
+      '@nuvo-code/core':
         specifier: workspace:*
         version: link:../../packages/core
       lucide-react:

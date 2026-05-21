@@ -13,7 +13,7 @@ import {
   NcGridBackground,
   NcLogo,
   NcTag,
-} from "@nuvocode/core";
+} from "@nuvo-code/core";
 
 export function IntroPage() {
   return (

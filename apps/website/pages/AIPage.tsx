@@ -1,11 +1,11 @@
 import { ArrowUp, Sparkles } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
 import { Subsection } from "../registry/Showcase";
-import { NcBadge } from "@nuvocode/core";
-import { NcButton } from "@nuvocode/core";
-import { NcDot } from "@nuvocode/core";
-import { NcProgressBar } from "@nuvocode/core";
-import { NcTag } from "@nuvocode/core";
+import { NcBadge } from "@nuvo-code/core";
+import { NcButton } from "@nuvo-code/core";
+import { NcDot } from "@nuvo-code/core";
+import { NcProgressBar } from "@nuvo-code/core";
+import { NcTag } from "@nuvo-code/core";
 
 export function AIPage() {
   return (

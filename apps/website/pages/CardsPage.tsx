@@ -1,10 +1,10 @@
 import { ArrowUpRight, Box } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
 import { Showcase, Subsection } from "../registry/Showcase";
-import { NcCard, NcCardContent, NcCardDescription, NcCardFooter, NcCardHeader, NcCardTitle } from "@nuvocode/core";
-import { NcDot } from "@nuvocode/core";
-import { NcTag } from "@nuvocode/core";
-import { NcButton } from "@nuvocode/core";
+import { NcCard, NcCardContent, NcCardDescription, NcCardFooter, NcCardHeader, NcCardTitle } from "@nuvo-code/core";
+import { NcDot } from "@nuvo-code/core";
+import { NcTag } from "@nuvo-code/core";
+import { NcButton } from "@nuvo-code/core";
 
 export function CardsPage() {
   return (
