@@ -11,7 +11,10 @@
   },
   "devDependencies": {
     "semantic-release": "^21.0.0",
+    "@semantic-release/commit-analyzer": "^10.0.0",
+    "@semantic-release/release-notes-generator": "^11.0.0",
     "@semantic-release/npm": "^10.0.0",
-    "@semantic-release/github": "^9.0.0"
+    "@semantic-release/github": "^9.0.0",
+    "conventional-changelog-conventionalcommits": "^6.1.0"
   }
 }
