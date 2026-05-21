@@ -40,10 +40,10 @@ export function NcCommandMenu({
 
   return (
     <NcDialog open={open} onOpenChange={onOpenChange}>
-      <NcDialogContent className="max-w-xl gap-0 p-0">
+      <NcDialogContent className="max-w-xl gap-0 p-0 theme-light:bg-surface-1">
         <NcDialogTitle className="sr-only">Command Menu</NcDialogTitle>
         <Command label="Command Menu" className="flex flex-col">
-          <div className="flex items-center gap-2 border-b border-border-subtle px-4">
+          <div className="flex items-center gap-2 border-b border-border-subtle px-4 theme-light:bg-surface-2/50">
             <Search size={14} className="text-fg-faint" />
             <Command.Input
               placeholder={placeholder}
@@ -54,7 +54,7 @@ export function NcCommandMenu({
             />
             <NcKbd>ESC</NcKbd>
           </div>
-          <Command.List className="max-h-[360px] overflow-y-auto p-2">
+          <Command.List className="max-h-[360px] overflow-y-auto p-2 theme-light:bg-surface-1">
             <Command.Empty className="px-3 py-8 text-center text-[12.5px] text-fg-subtle">
               No results found.
             </Command.Empty>
@@ -81,6 +81,7 @@ export function NcCommandMenu({
                       "group flex cursor-pointer items-center gap-2.5 rounded-[7px] px-2.5 py-2",
                       "text-[12.5px] text-fg-muted transition-colors",
                       "data-[selected=true]:bg-surface-3 data-[selected=true]:text-fg",
+                      "data-[selected=true]:shadow-sm",
                     )}
                   >
                     {item.icon && <span className="text-fg-faint group-data-[selected=true]:text-[--color-brand-purple]">{item.icon}</span>}
@@ -98,7 +99,7 @@ export function NcCommandMenu({
               </Command.Group>
             ))}
           </Command.List>
-          <div className="flex items-center justify-between border-t border-border-subtle px-4 py-2 text-[10px] text-fg-faint">
+          <div className="flex items-center justify-between border-t border-border-subtle px-4 py-2 text-[10px] text-fg-faint theme-light:bg-surface-2/30">
             <span className="font-mono tracking-wider">NUVO COMMAND · K</span>
             <span className="flex items-center gap-1.5">
               Navigate <NcKbd>↑</NcKbd> <NcKbd>↓</NcKbd> · Open <NcKbd>↵</NcKbd>

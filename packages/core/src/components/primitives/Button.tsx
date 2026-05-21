@@ -17,9 +17,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-[image:var(--nc-grad)] text-white border border-transparent shadow-[inset_0_1px_0_rgb(255_255_255_/_0.18)] hover:-translate-y-px hover:shadow-[0_8px_24px_rgb(168_85_247_/_0.35)]",
+          "bg-[image:var(--nc-grad)] text-white border border-transparent shadow-[inset_0_1px_0_rgb(255_255_255_/_0.18)] hover:-translate-y-px hover:shadow-[0_8px_24px_rgb(168_85_247_/_0.35)] active:translate-y-0",
         secondary:
-          "bg-surface-3 text-fg border border-border-strong hover:bg-surface-2 hover:-translate-y-px hover:shadow-[0_8px_24px_rgb(0_0_0_/_0.4)]",
+          "bg-surface-3 text-fg border border-border-strong hover:bg-surface-2 hover:-translate-y-px hover:shadow-[0_8px_24px_rgb(0_0_0_/_0.4)] dark:hover:shadow-[0_8px_24px_rgb(0_0_0_/_0.5)]",
         ghost:
           "bg-transparent text-fg-subtle border border-transparent hover:bg-surface-2 hover:text-fg",
         outline:

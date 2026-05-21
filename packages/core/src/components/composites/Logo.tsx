@@ -15,7 +15,7 @@ export function NcLogo({ size = 24, className, ...props }: NcLogoProps) {
       height={size}
       viewBox="0 0 512 512"
       fill="none"
-      className={cn("shrink-0 rounded", className)}
+      className={cn("shrink-0 rounded overflow-hidden", className)}
       {...props}
     >
       <defs>
