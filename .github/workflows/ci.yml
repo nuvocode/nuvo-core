@@ -35,3 +35,47 @@ jobs:
       
       - name: Build website
         run: pnpm build:website
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      
+      - name: Install dependencies
+        run: pnpm install
+      
+      - name: Build core package
+        run: pnpm build:core
+      
+      - name: Build website (for Cloudflare Pages)
+        run: pnpm build:website
+      
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm exec semantic-release
+      
+      - name: Deploy to Cloudflare Pages (optional)
+        # Cloudflare Pages deployment steps here
+        run: echo "Add CF Pages deployment steps"
