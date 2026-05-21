@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nuvocode/core": ["../packages/core/dist"],
+      "@nuvocode/core/core": ["../packages/core/dist/core/index"],
+      "@nuvocode/core/core/*": ["../packages/core/dist/core/*"],
+      "@nuvocode/core/*": ["../packages/core/dist/*"]
+    }
+  },
+  "include": [
+    "*.tsx",
+    "pages/**/*.tsx",
+    "registry/**/*.tsx"
+  ]
+}
