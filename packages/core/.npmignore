@@ -1,0 +1,16 @@
+node_modules
+dist
+src
+*.ts
+*.tsx
+!*.d.ts
+vite.config.ts
+tsconfig*.json
+index.html
+public
+.DS_Store
+*.local
+.vite
+.env
+.env.*
+!.env.example
