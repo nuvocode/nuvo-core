@@ -84,7 +84,7 @@ export function NcCommandMenu({
                       "data-[selected=true]:shadow-sm",
                     )}
                   >
-                    {item.icon && <span className="text-fg-faint group-data-[selected=true]:text-[--color-brand-purple]">{item.icon}</span>}
+                    {item.icon ? <span className="text-fg-faint group-data-[selected=true]:text-[--color-brand-purple]">{item.icon}</span> : null}
                     <span className="flex-1">{item.label}</span>
                     {item.hint && <span className="text-[11px] text-fg-faint">{item.hint}</span>}
                     {item.shortcut && (

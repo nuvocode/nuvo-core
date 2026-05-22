@@ -19,11 +19,23 @@ export default defineConfig({
     emptyOutDir: true,
     cssCodeSplit: true,
     rollupOptions: {
-      external: ["react", "react-dom", "jsx-runtime"],
+      // Never bundle React or any of its entry points into dist — the
+      // consuming app must provide a single React instance. Bundling
+      // react/jsx-runtime pulls in React-version-specific internals
+      // (e.g. ReactCurrentDispatcher) that break across React 18 / 19.
+      external: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+        "react-dom/client",
+      ],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          "react/jsx-runtime": "jsxRuntime",
+          "react/jsx-dev-runtime": "jsxDevRuntime",
         },
         assetFileNames: (assetInfo) => {
           if (assetInfo.name?.endsWith(".css")) {
