@@ -49,6 +49,7 @@ export function ColorsPage() {
     <PageLayout
       eyebrow="Foundations · Color"
       title="Color system"
+      slug="colors"
       description="Color is information first, decoration second. Surfaces stack from background up; foreground tones step down from full contrast. Signal colors carry semantic meaning across the system."
     >
       <Subsection title="Surface scale" description="A four-step elevation system. Lower numbers sit further from the viewer.">

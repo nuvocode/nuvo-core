@@ -8,6 +8,7 @@ export function LayoutsPage() {
     <PageLayout
       eyebrow="Composition · Layouts"
       title="Layouts"
+      slug="layouts"
       description="The OS-style workspace shell. Sidebar nav · main content · inspector column. Calm, dense, console-like."
     >
       <Subsection title="Workspace shell">

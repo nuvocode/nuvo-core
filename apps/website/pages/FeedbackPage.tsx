@@ -1,6 +1,6 @@
-import { AlertTriangle, Box, CheckCircle2, Info, XCircle } from "lucide-react";
+import { AlertTriangle, Box, CheckCircle2, Info, Search, Shield, XCircle } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
-import { Showcase, Subsection } from "../registry/Showcase";
+import { PropTable, Showcase, Subsection } from "../registry/Showcase";
 import { NcButton } from "@nuvo-code/core";
 import { NcEmptyState } from "@nuvo-code/core";
 
@@ -36,6 +36,8 @@ export function FeedbackPage() {
     <PageLayout
       eyebrow="Components · Feedback"
       title="Feedback"
+      slug="feedback"
+      related={[{ slug: "data", label: "Data Display" }, { slug: "overlays", label: "Overlays" }, { slug: "inputs", label: "Inputs" }]}
       description="Alerts, empty states, and toasts. Always communicate what changed, why it matters, and what to do next."
     >
       <Subsection title="Alerts">
@@ -47,20 +49,52 @@ export function FeedbackPage() {
         </div>
       </Subsection>
 
-      <Subsection title="Empty state">
-        <Showcase previewClassName="!min-h-[280px]">
-          <NcEmptyState
-            className="w-full max-w-md"
-            icon={<Box size={16} />}
-            title="No deployments yet"
-            description="Push to main, or run nuvo deploy --prod to ship your first build."
-            action={<NcButton variant="primary">Connect repository</NcButton>}
-          />
-        </Showcase>
+      <Subsection title="Empty state variations" description="Four common patterns: no data, no results, no access, and error.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-[12px] border border-border bg-surface-1 p-6">
+            <NcEmptyState
+              icon={<Box size={16} />}
+              title="No projects yet"
+              description="Create your first project to start deploying."
+              action={<NcButton variant="primary" size="sm">Create project</NcButton>}
+            />
+          </div>
+          <div className="rounded-[12px] border border-border bg-surface-1 p-6">
+            <NcEmptyState
+              icon={<Search size={16} />}
+              title="No results found"
+              description="Try adjusting your search or filter criteria."
+              action={<NcButton variant="ghost" size="sm">Clear filters</NcButton>}
+            />
+          </div>
+          <div className="rounded-[12px] border border-border bg-surface-1 p-6">
+            <NcEmptyState
+              icon={<Shield size={16} />}
+              title="Access restricted"
+              description="You don't have permission to view this workspace. Request access from an admin."
+              action={<NcButton variant="outline" size="sm">Request access</NcButton>}
+            />
+          </div>
+          <div className="rounded-[12px] border border-border bg-surface-1 p-6">
+            <NcEmptyState
+              icon={<AlertTriangle size={16} />}
+              title="Something went wrong"
+              description="We couldn't load your deployments. Check your connection and try again."
+              action={<NcButton variant="secondary" size="sm">Retry</NcButton>}
+            />
+          </div>
+        </div>
       </Subsection>
 
       <Subsection title="Toast pattern" description="Small status notifications. Use sparingly — system-critical state belongs in alerts.">
-        <Showcase>
+        <Showcase
+          importPath={`import { CheckCircle2 } from "lucide-react";`}
+          code={`<div className="flex items-center gap-3 rounded-[10px] border border-border bg-surface-1 px-4 py-2.5 shadow-[var(--shadow-pop)]">
+  <CheckCircle2 size={14} className="text-[--color-signal-green]" />
+  <span className="text-[12.5px] text-fg-muted">Workspace renamed</span>
+  <span className="font-mono text-[10.5px] text-fg-faint">just now</span>
+</div>`}
+        >
           <div className="flex w-full max-w-md flex-col items-end gap-2">
             <div className="anim-slide-up flex items-center gap-3 rounded-[10px] border border-border bg-surface-1 px-4 py-2.5 shadow-[var(--shadow-pop)]">
               <CheckCircle2 size={14} className="text-[--color-signal-green]" />
@@ -69,6 +103,66 @@ export function FeedbackPage() {
             </div>
           </div>
         </Showcase>
+      </Subsection>
+
+      <Subsection title="Props">
+        <PropTable
+          rows={[
+            { prop: "icon", type: "React.ReactNode", default: "—", description: "Icon displayed above the title." },
+            { prop: "title", type: "string", default: "—", description: "Primary heading for the empty state." },
+            { prop: "description", type: "string", default: "—", description: "Supporting text explaining the state." },
+            { prop: "action", type: "React.ReactNode", default: "—", description: "Call-to-action element, typically a Button." },
+            { prop: "className", type: "string", default: "—", description: "Additional CSS classes." },
+          ]}
+        />
+      </Subsection>
+
+      <Subsection title="Loading skeletons" description="Use shimmer placeholders while content loads. The nc-shimmer animation is built into the CSS.">
+        <div className="space-y-6">
+          <div>
+            <div className="label-mono mb-3">Card skeleton</div>
+            <div className="rounded-[14px] border border-border bg-surface-1 p-5">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-[8px] bg-surface-2 anim-shimmer" />
+                <div className="flex-1 space-y-2">
+                  <div className="h-3 w-2/3 rounded-[4px] bg-surface-2 anim-shimmer" />
+                  <div className="h-2.5 w-1/2 rounded-[4px] bg-surface-2 anim-shimmer" />
+                </div>
+              </div>
+              <div className="mt-4 space-y-2">
+                <div className="h-2.5 w-full rounded-[4px] bg-surface-2 anim-shimmer" />
+                <div className="h-2.5 w-4/5 rounded-[4px] bg-surface-2 anim-shimmer" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="label-mono mb-3">Table row skeleton</div>
+            <div className="overflow-hidden rounded-[12px] border border-border bg-surface-1">
+              <div className="space-y-0">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="flex items-center gap-4 border-b border-border-subtle px-4 py-3 last:border-b-0">
+                    <div className="h-3 w-24 rounded-[4px] bg-surface-2 anim-shimmer" />
+                    <div className="h-3 w-32 rounded-[4px] bg-surface-2 anim-shimmer" />
+                    <div className="h-3 w-16 rounded-[4px] bg-surface-2 anim-shimmer" />
+                    <div className="ml-auto h-5 w-14 rounded-[20px] bg-surface-2 anim-shimmer" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="label-mono mb-3">Stat block skeleton</div>
+            <div className="grid gap-3 sm:grid-cols-4">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="rounded-[12px] border border-border bg-surface-1 p-4">
+                  <div className="h-2.5 w-16 rounded-[4px] bg-surface-2 anim-shimmer" />
+                  <div className="mt-2 h-6 w-20 rounded-[4px] bg-surface-2 anim-shimmer" />
+                  <div className="mt-1 h-2 w-12 rounded-[4px] bg-surface-2 anim-shimmer" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </Subsection>
     </PageLayout>
   );

@@ -7,6 +7,7 @@ export function AnimationsPage() {
     <PageLayout
       eyebrow="Foundations · Motion"
       title="Animations"
+      slug="animations"
       description="Motion as information. Hovers lift 2px. Toggles slide. Pulses indicate liveness. Avoid spring physics — use ease-out with tight durations."
     >
       <Subsection title="Hover lift" description="180ms · transform + shadow. Reserved for actions; never decorative.">

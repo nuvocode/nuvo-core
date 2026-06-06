@@ -22,6 +22,7 @@ export function ExamplesPage() {
     <PageLayout
       eyebrow="Composition · Real surfaces"
       title="Examples"
+      slug="examples"
       description="Real screens assembled from the system. Every pixel below is a primitive or composite — no bespoke styling."
     >
       <div className="flex flex-wrap gap-2">

@@ -8,10 +8,13 @@ export function ButtonsPage() {
     <PageLayout
       eyebrow="Components · Action"
       title="Button"
+      slug="buttons"
+      related={[{ slug: "inputs", label: "Inputs" }, { slug: "cards", label: "Cards" }, { slug: "overlays", label: "Overlays" }]}
       description="Seven variants, five sizes. Built on Radix Slot — supports asChild for arbitrary trigger elements while preserving accessibility."
     >
       <Subsection title="Variants" description="Visual emphasis ladders from primary down through ghost.">
         <Showcase
+          importPath={`import { NcButton } from "@nuvo-code/core";`}
           code={`<NcButton variant="primary">Deploy to Production <ArrowRight /></NcButton>
 <NcButton variant="secondary">Stage</NcButton>
 <NcButton variant="outline">Configure</NcButton>

@@ -10,6 +10,7 @@ export function PatternsPage() {
     <PageLayout
       eyebrow="Composition · Patterns"
       title="Patterns"
+      slug="patterns"
       description="The recurring compositions that define Nuvo Code's voice — terminal output, deploy pipelines, edge region grids, infra telemetry."
     >
       <Subsection title="Terminal" description="Monospace command logs. Use for CLI examples, build output, and 'machine speaking' moments.">

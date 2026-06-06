@@ -9,6 +9,7 @@ export function SurfacesPage() {
     <PageLayout
       eyebrow="Foundations · Surfaces"
       title="Surfaces & elevation"
+      slug="surfaces"
       description="Layered surfaces, geometric clip-paths, glass panels, ambient glow. Five distinct strategies — each one earns its place."
     >
       <Subsection title="Card surfaces" description="Three flavors: raised (above bg), sunken (deepest), glass (translucent).">

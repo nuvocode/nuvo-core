@@ -1,4 +1,5 @@
 export { IntroPage } from "./IntroPage";
+export { GettingStartedPage } from "./GettingStartedPage";
 export { ColorsPage } from "./ColorsPage";
 export { TypographyPage } from "./TypographyPage";
 export { SpacingPage } from "./SpacingPage";

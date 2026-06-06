@@ -1,5 +1,5 @@
 import { PageLayout } from "../registry/PageLayout";
-import { Showcase, Subsection } from "../registry/Showcase";
+import { PropTable, Showcase, Subsection } from "../registry/Showcase";
 import { NcBadge } from "@nuvo-code/core";
 import { NcDot } from "@nuvo-code/core";
 import { NcProgressBar } from "@nuvo-code/core";
@@ -24,10 +24,20 @@ export function DataDisplayPage() {
     <PageLayout
       eyebrow="Components · Data"
       title="Data display"
+      slug="data"
+      related={[{ slug: "feedback", label: "Feedback" }, { slug: "cards", label: "Cards" }, { slug: "patterns", label: "Patterns" }]}
       description="Tags, badges, progress bars, tables, stat blocks. The visual vocabulary for surfacing numbers, state, and structure."
     >
       <Subsection title="Tags" description="Pill labels for short categorical state.">
-        <Showcase>
+        <Showcase
+          importPath={`import { NcTag } from "@nuvo-code/core";`}
+          code={`import { NcTag } from "@nuvo-code/core";
+
+<NcTag>Neutral</NcTag>
+<NcTag tone="accent">Accent</NcTag>
+<NcTag tone="green">Stable</NcTag>
+<NcTag tone="red">Failed</NcTag>`}
+        >
           <NcTag>Neutral</NcTag>
           <NcTag tone="accent">Accent</NcTag>
           <NcTag tone="green">Stable</NcTag>
@@ -39,8 +49,14 @@ export function DataDisplayPage() {
       </Subsection>
 
       <Subsection title="Badges" description="Capsule with monospace label — used for build numbers, version pins, environment tags.">
-        <Showcase>
-          <NcBadge>v0.3 · INTERNAL</NcBadge>
+        <Showcase
+          code={`import { NcBadge } from "@nuvo-code/core";
+
+<NcBadge>v1.2.3 · INTERNAL</NcBadge>
+<NcBadge tone="accent">CORE DIRECTION</NcBadge>
+<NcBadge tone="success">LIVE</NcBadge>`}
+        >
+          <NcBadge>v1.2.3 · INTERNAL</NcBadge>
           <NcBadge tone="accent">
             <NcDot tone="purple" pulse /> CORE DIRECTION
           </NcBadge>
@@ -54,7 +70,13 @@ export function DataDisplayPage() {
       </Subsection>
 
       <Subsection title="Status dots">
-        <Showcase>
+        <Showcase
+          code={`import { NcDot } from "@nuvo-code/core";
+
+<NcDot tone="green" pulse />
+<NcDot tone="amber" />
+<NcDot tone="red" />`}
+        >
           {(["neutral", "green", "blue", "amber", "red", "purple"] as const).map((t) => (
             <div key={t} className="flex items-center gap-2 text-[12px] text-fg-subtle">
               <NcDot tone={t} pulse={t === "green" || t === "purple"} />
@@ -76,12 +98,24 @@ export function DataDisplayPage() {
       </Subsection>
 
       <Subsection title="Stat blocks" description="The visual unit of a dashboard. Label, value, optional delta and caption.">
-        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-          <NcStatBlock label="API P99" value="12" unit="ms" delta={{ value: "8%", direction: "down", tone: "positive" }} caption="vs 7d" />
-          <NcStatBlock label="Uptime" value="99.97" unit="%" delta={{ value: "0.01%", direction: "up", tone: "positive" }} />
-          <NcStatBlock label="Throughput" value="24.7" unit="k/s" delta={{ value: "12%", direction: "up", tone: "positive" }} />
-          <NcStatBlock label="Err rate" value="0.03" unit="%" delta={{ value: "stable", direction: "flat", tone: "neutral" }} />
-        </div>
+        <Showcase
+          code={`import { NcStatBlock } from "@nuvo-code/core";
+
+<NcStatBlock
+  label="API P99"
+  value="12"
+  unit="ms"
+  delta={{ value: "8%", direction: "down", tone: "positive" }}
+  caption="vs 7d"
+/>`}
+        >
+          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+            <NcStatBlock label="API P99" value="12" unit="ms" delta={{ value: "8%", direction: "down", tone: "positive" }} caption="vs 7d" />
+            <NcStatBlock label="Uptime" value="99.97" unit="%" delta={{ value: "0.01%", direction: "up", tone: "positive" }} />
+            <NcStatBlock label="Throughput" value="24.7" unit="k/s" delta={{ value: "12%", direction: "up", tone: "positive" }} />
+            <NcStatBlock label="Err rate" value="0.03" unit="%" delta={{ value: "stable", direction: "flat", tone: "neutral" }} />
+          </div>
+        </Showcase>
       </Subsection>
 
       <Subsection title="Table" description="Mono identifiers, sans labels, tags for state — the canonical Nuvo table.">
@@ -119,6 +153,18 @@ export function DataDisplayPage() {
             </tbody>
           </table>
         </div>
+      </Subsection>
+
+      <Subsection title="Props">
+        <PropTable
+          rows={[
+            { prop: "NcTag", type: "—", default: "—", description: "Pill label. Props: tone (neutral/accent/green/blue/amber/pink/red), size (xs/sm/md)." },
+            { prop: "NcBadge", type: "—", default: "—", description: "Capsule badge. Props: tone (neutral/accent/success/warning/danger), size (sm/md)." },
+            { prop: "NcDot", type: "—", default: "—", description: "Status indicator dot. Props: tone (neutral/green/blue/amber/red/purple), pulse (boolean), size (xs/sm/md)." },
+            { prop: "NcProgressBar", type: "—", default: "—", description: "Progress indicator. Props: value (0-100), tone (accent/green/neutral), size (sm/md/lg)." },
+            { prop: "NcStatBlock", type: "—", default: "—", description: "Dashboard stat card. Props: label, value, unit, delta ({value, direction, tone}), caption." },
+          ]}
+        />
       </Subsection>
     </PageLayout>
   );

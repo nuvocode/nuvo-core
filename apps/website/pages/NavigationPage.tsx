@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Activity, Box, GitBranch, LayoutGrid, Settings, Users } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
-import { Subsection } from "../registry/Showcase";
+import { PropTable, Subsection } from "../registry/Showcase";
 import { NcSidebar } from "@nuvo-code/core";
 import { NcTabs, NcTabsContent, NcTabsList, NcTabsTrigger } from "@nuvo-code/core";
 import { NcTag } from "@nuvo-code/core";
@@ -13,6 +13,8 @@ export function NavigationPage() {
     <PageLayout
       eyebrow="Components · Navigation"
       title="Navigation"
+      slug="navigation"
+      related={[{ slug: "overlays", label: "Overlays" }, { slug: "layouts", label: "Layouts" }, { slug: "patterns", label: "Patterns" }]}
       description="Sidebars, tabs, and breadcrumbs. The navigation language across Nuvo is mono labels for sections, sans for items, dots and tags for state."
     >
       <Subsection title="Sidebar" description="Grouped items with mono section labels. Active item highlights in surface-3; the icon picks up the accent tint.">
@@ -65,6 +67,18 @@ export function NavigationPage() {
             <NcTabsContent value="settings" className="text-[13px] text-fg-subtle">Settings panel content.</NcTabsContent>
           </NcTabs>
         </div>
+      </Subsection>
+
+      <Subsection title="Props">
+        <PropTable
+          rows={[
+            { prop: "NcSidebar", type: "—", default: "—", description: "Navigation sidebar. Props: activeId, onSelect, groups ({id, label?, items: [{id, label, icon, badge?}]}), header, className." },
+            { prop: "NcTabs", type: "—", default: "—", description: "Tab container. Props: defaultValue, value, onValueChange." },
+            { prop: "NcTabsList", type: "—", default: "—", description: "Tab trigger row. Renders as a flex row with mono styling." },
+            { prop: "NcTabsTrigger", type: "—", default: "—", description: "Individual tab trigger. Props: value, disabled." },
+            { prop: "NcTabsContent", type: "—", default: "—", description: "Tab panel content. Props: value, className." },
+          ]}
+        />
       </Subsection>
 
       <Subsection title="Breadcrumb">

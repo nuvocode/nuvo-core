@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Command as CommandIcon, Github, Moon, Sun, SunMoon } from "lucide-react";
+import { Command as CommandIcon, Github, Menu, Moon, Sun, SunMoon, X } from "lucide-react";
 import {
   NcButton,
   NcBadge,
@@ -22,6 +22,7 @@ function readHashSlug() {
 export function AppShell() {
   const [slug, setSlug] = React.useState<string>(() => readHashSlug());
   const [cmdOpen, setCmdOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   const { theme, setTheme } = useTheme();
 
   React.useEffect(() => {
@@ -61,6 +62,13 @@ export function AppShell() {
           "theme-light:glass-light theme-light:border-border-strong",
         ].join(" ")}>
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => setMobileOpen(true)}
+              className="grid h-8 w-8 place-items-center rounded-[7px] text-fg-subtle transition-colors hover:bg-surface-2 hover:text-fg md:hidden"
+              aria-label="Open navigation"
+            >
+              <Menu size={16} />
+            </button>
             <NcWordmark size={20} />
             <span className="hidden text-[12px] text-fg-subtle md:inline">Design System</span>
             <NcBadge tone="neutral" size="sm">v{__NUVO_VERSION__} · INTERNAL</NcBadge>
@@ -111,6 +119,38 @@ export function AppShell() {
             onSelect: () => setSlug(p.slug),
           }))}
         />
+
+        {/* Mobile navigation drawer */}
+        {mobileOpen && (
+          <div className="fixed inset-0 z-50 md:hidden">
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setMobileOpen(false)}
+            />
+            <div className="absolute left-0 top-0 h-full w-[280px] bg-bg shadow-[var(--shadow-pop)] animate-[nc-slide-up_0.2s_ease-out]">
+              <div className="flex items-center justify-between border-b border-border-subtle px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <NcWordmark size={18} />
+                  <span className="text-[12px] text-fg-subtle">Design System</span>
+                </div>
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  className="grid h-7 w-7 place-items-center rounded-[6px] text-fg-subtle transition-colors hover:bg-surface-2 hover:text-fg"
+                  aria-label="Close navigation"
+                >
+                  <X size={14} />
+                </button>
+              </div>
+              <div className="overflow-y-auto p-3">
+                <NcSidebar
+                  activeId={slug}
+                  onSelect={(id) => { setSlug(id); setMobileOpen(false); }}
+                  groups={groups}
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </NcTooltipProvider>
   );

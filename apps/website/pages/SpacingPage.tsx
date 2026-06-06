@@ -18,6 +18,7 @@ export function SpacingPage() {
     <PageLayout
       eyebrow="Foundations · Spacing"
       title="Spacing & radii"
+      slug="spacing"
       description="A 4-px base unit with named radii. Tight, controlled whitespace — the system breathes through proportion, not generosity."
     >
       <Subsection title="Spacing scale" description="Tailwind's default scale, anchored at 4px.">

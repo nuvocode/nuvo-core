@@ -1,6 +1,6 @@
 import { ArrowUp, Sparkles } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
-import { Subsection } from "../registry/Showcase";
+import { PropTable, Subsection } from "../registry/Showcase";
 import { NcBadge } from "@nuvo-code/core";
 import { NcButton } from "@nuvo-code/core";
 import { NcDot } from "@nuvo-code/core";
@@ -12,6 +12,8 @@ export function AIPage() {
     <PageLayout
       eyebrow="Components · AI"
       title="AI components"
+      slug="ai"
+      related={[{ slug: "feedback", label: "Feedback" }, { slug: "data", label: "Data Display" }, { slug: "patterns", label: "Patterns" }]}
       description="Inference panels, streaming responses, agent loops, citations. The visual language for surfaces where the system thinks aloud."
     >
       <Subsection title="Inference panel" description="A floating, glassy status card that surfaces what the model is doing right now.">
@@ -97,6 +99,17 @@ export function AIPage() {
             </li>
           </ul>
         </div>
+      </Subsection>
+
+      <Subsection title="Props">
+        <PropTable
+          rows={[
+            { prop: "NcProgressBar", type: "—", default: "—", description: "Progress indicator. Props: value (0-100), tone (accent/green/neutral), size (sm/md/lg)." },
+            { prop: "NcBadge", type: "—", default: "—", description: "Capsule badge. Props: tone (neutral/accent/success/warning/danger), size (sm/md)." },
+            { prop: "NcDot", type: "—", default: "—", description: "Status indicator dot. Props: tone, pulse (boolean), size (xs/sm/md)." },
+            { prop: "NcTag", type: "—", default: "—", description: "Pill label. Props: tone, size (xs/sm/md)." },
+          ]}
+        />
       </Subsection>
     </PageLayout>
   );

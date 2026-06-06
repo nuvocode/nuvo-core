@@ -6,6 +6,7 @@ interface ShowcaseProps {
   title?: string;
   description?: string;
   code?: string;
+  importPath?: string;
   className?: string;
   previewClassName?: string;
   children: React.ReactNode;
@@ -15,6 +16,7 @@ export function Showcase({
   title,
   description,
   code,
+  importPath,
   className,
   previewClassName,
   children,
@@ -41,6 +43,23 @@ export function Showcase({
           {children}
         </div>
       </div>
+      {importPath && (
+        <div className="border-t border-border-subtle bg-bg px-4 py-2.5">
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[11px] text-fg-faint">{importPath}</span>
+            <button
+              onClick={() => navigator.clipboard.writeText(importPath)}
+              className="grid h-6 w-6 place-items-center rounded-[5px] text-fg-faint transition-colors hover:bg-surface-2 hover:text-fg"
+              aria-label="Copy import path"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
       {code && (
         <div className="border-t border-border-subtle bg-bg p-3">
           <NcCodeBlock code={code} />

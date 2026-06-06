@@ -1,6 +1,6 @@
 import { ArrowUpRight, Box } from "lucide-react";
 import { PageLayout } from "../registry/PageLayout";
-import { Showcase, Subsection } from "../registry/Showcase";
+import { PropTable, Showcase, Subsection } from "../registry/Showcase";
 import { NcCard, NcCardContent, NcCardDescription, NcCardFooter, NcCardHeader, NcCardTitle } from "@nuvo-code/core";
 import { NcDot } from "@nuvo-code/core";
 import { NcTag } from "@nuvo-code/core";
@@ -11,10 +11,29 @@ export function CardsPage() {
     <PageLayout
       eyebrow="Components · Container"
       title="Card"
+      slug="cards"
+      related={[{ slug: "buttons", label: "Buttons" }, { slug: "surfaces", label: "Surfaces" }, { slug: "layouts", label: "Layouts" }]}
       description="A composable surface. Header, content, footer all opt-in. Interactive variants animate on hover with the accent ring."
     >
       <Subsection title="Anatomy">
-        <Showcase previewClassName="!justify-start">
+        <Showcase
+          previewClassName="!justify-start"
+          importPath={`import { NcCard, NcCardHeader, NcCardTitle, NcCardDescription, NcCardContent, NcCardFooter } from "@nuvo-code/core";`}
+          code={`import { NcCard, NcCardHeader, NcCardTitle, NcCardDescription, NcCardContent, NcCardFooter } from "@nuvo-code/core";
+
+<NcCard interactive>
+  <NcCardHeader>
+    <NcCardTitle>Nuvo Studio</NcCardTitle>
+    <NcCardDescription>Developer tooling for shipping at the speed of thought.</NcCardDescription>
+  </NcCardHeader>
+  <NcCardContent>
+    {/* Your content */}
+  </NcCardContent>
+  <NcCardFooter>
+    <NcButton variant="ghost" size="xs">Open</NcButton>
+  </NcCardFooter>
+</NcCard>`}
+        >
           <NcCard interactive className="w-[300px]">
             <NcCardHeader>
               <div className="flex items-center justify-between">
@@ -46,12 +65,40 @@ export function CardsPage() {
       </Subsection>
 
       <Subsection title="Surfaces">
-        <Showcase>
+        <Showcase
+          code={`<NcCard surface="raised">raised</NcCard>
+<NcCard surface="sunken">sunken</NcCard>
+<NcCard surface="flat">flat</NcCard>
+<NcCard surface="glass">glass</NcCard>`}
+        >
           <NcCard surface="raised" className="w-44 p-4 text-center text-[12.5px] text-fg-subtle">raised</NcCard>
           <NcCard surface="sunken" className="w-44 p-4 text-center text-[12.5px] text-fg-subtle">sunken</NcCard>
           <NcCard surface="flat" className="w-44 p-4 text-center text-[12.5px] text-fg-subtle">flat</NcCard>
           <NcCard surface="glass" className="w-44 p-4 text-center text-[12.5px] text-fg-subtle">glass</NcCard>
         </Showcase>
+      </Subsection>
+
+      <Subsection title="Props">
+        <PropTable
+          rows={[
+            { prop: "surface", type: '"raised" | "sunken" | "flat" | "glass"', default: '"raised"', description: "Visual elevation style. Glass adds backdrop-blur." },
+            { prop: "radius", type: '"md" | "lg" | "xl"', default: '"md"', description: "Border radius: 12px, 14px, or 20px." },
+            { prop: "interactive", type: "boolean", default: "false", description: "Enables hover glow ring and translate animation." },
+            { prop: "className", type: "string", default: "—", description: "Additional CSS classes." },
+          ]}
+        />
+      </Subsection>
+
+      <Subsection title="Sub-components">
+        <PropTable
+          rows={[
+            { prop: "NcCardHeader", type: "HTMLDivElement", default: "—", description: "Top section, typically contains title and description." },
+            { prop: "NcCardTitle", type: "HTMLHeadingElement", default: "—", description: "Card heading, renders as h3." },
+            { prop: "NcCardDescription", type: "HTMLParagraphElement", default: "—", description: "Supporting text below the title." },
+            { prop: "NcCardContent", type: "HTMLDivElement", default: "—", description: "Main body of the card." },
+            { prop: "NcCardFooter", type: "HTMLDivElement", default: "—", description: "Bottom section, typically actions or metadata." },
+          ]}
+        />
       </Subsection>
     </PageLayout>
   );

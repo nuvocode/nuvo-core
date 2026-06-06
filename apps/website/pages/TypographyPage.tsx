@@ -17,6 +17,7 @@ export function TypographyPage() {
     <PageLayout
       eyebrow="Foundations · Typography"
       title="Typography"
+      slug="typography"
       description="Inter carries human voice. JetBrains Mono carries machine logic — labels, code, metrics, system telemetry. The boundary stays sharp."
     >
       <Subsection title="Type scale" description="Eight rungs covering display through caption. Tight tracking on display sizes, loosened progressively as size decreases.">

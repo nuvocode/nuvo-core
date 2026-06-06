@@ -40,8 +40,11 @@ export function NcCommandMenu({
 
   return (
     <NcDialog open={open} onOpenChange={onOpenChange}>
-      <NcDialogContent className="max-w-xl gap-0 p-0 theme-light:bg-surface-1">
+      <NcDialogContent className="max-w-xl gap-0 p-0 theme-light:bg-surface-1" aria-describedby="nc-cmd-description">
         <NcDialogTitle className="sr-only">Command Menu</NcDialogTitle>
+        <p id="nc-cmd-description" className="sr-only">
+          Search and navigate through available commands. Use arrow keys to move, enter to select, and escape to close.
+        </p>
         <Command label="Command Menu" className="flex flex-col">
           <div className="flex items-center gap-2 border-b border-border-subtle px-4 theme-light:bg-surface-2/50">
             <Search size={14} className="text-fg-faint" />

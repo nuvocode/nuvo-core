@@ -6,7 +6,7 @@ import {
 import type { ComponentType } from "react";
 import {
   AIPage, AnimationsPage, ButtonsPage, CardsPage, ColorsPage, DataDisplayPage,
-  ExamplesPage, FeedbackPage, IconsPage, InputsPage, IntroPage, LayoutsPage,
+  ExamplesPage, FeedbackPage, GettingStartedPage, IconsPage, InputsPage, IntroPage, LayoutsPage,
   NavigationPage, OverlaysPage, PatternsPage, SpacingPage, SurfacesPage, TypographyPage,
 } from "../pages";
 
@@ -20,6 +20,7 @@ export interface NavItem {
 
 export const pages: NavItem[] = [
   { slug: "intro",       label: "Introduction", group: "Overview",     icon: <Hash size={14} />,       component: IntroPage },
+  { slug: "getting-started", label: "Getting Started", group: "Overview", icon: <Sparkles size={14} />, component: GettingStartedPage },
 
   { slug: "colors",      label: "Colors",       group: "Foundations",  icon: <Brush size={14} />,      component: ColorsPage },
   { slug: "typography",  label: "Typography",   group: "Foundations",  icon: <Type size={14} />,       component: TypographyPage },

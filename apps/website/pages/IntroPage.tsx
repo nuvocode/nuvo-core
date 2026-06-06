@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Terminal, Zap } from "lucide-react";
+import { ArrowRight, Copy, Sparkles, Terminal, Zap } from "lucide-react";
 import {
   NcBadge,
   NcButton,
@@ -25,7 +25,7 @@ export function IntroPage() {
         <div className="relative mx-auto w-full max-w-[1080px] px-10 pb-24 pt-20 text-center">
           <NcBadge tone="accent" className="mx-auto mb-8 inline-flex">
             <NcDot tone="purple" pulse />
-            <span className="ml-1">v0.3 · Internal Draft</span>
+            <span className="ml-1">v1.2.3 · Internal Draft</span>
           </NcBadge>
 
           <div className="mb-6 flex items-center justify-center gap-4">
@@ -42,14 +42,29 @@ export function IntroPage() {
           </p>
 
           <div className="mt-10 flex items-center justify-center gap-3">
-            <NcButton variant="primary" size="lg">
-              Explore the system
+            <NcButton variant="primary" size="lg" onClick={() => { window.location.hash = "#/getting-started"; }}>
+              Get Started
               <ArrowRight size={14} />
             </NcButton>
             <NcButton variant="ghost" size="lg">
               <Terminal size={14} />
               View source
             </NcButton>
+          </div>
+
+          <div className="mt-10 flex items-center justify-center">
+            <div className="inline-flex items-center gap-2 rounded-[10px] border border-border bg-surface-1 px-4 py-2.5 font-mono text-[13px] text-fg-muted">
+              <Terminal size={13} className="text-fg-faint" />
+              <span className="text-fg-subtle">$</span>
+              <span>npm install @nuvo-code/core</span>
+              <button
+                onClick={() => navigator.clipboard.writeText("npm install @nuvo-code/core")}
+                className="ml-2 grid h-6 w-6 place-items-center rounded-[5px] text-fg-faint transition-colors hover:bg-surface-2 hover:text-fg"
+                aria-label="Copy install command"
+              >
+                <Copy size={12} />
+              </button>
+            </div>
           </div>
 
           <div className="mt-14 flex items-center justify-center gap-10">

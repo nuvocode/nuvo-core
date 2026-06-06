@@ -215,4 +215,4 @@ MIT © Nuvo Code
 
 ---
 
-@nuvo-code/core · v0.1.0 · 2026
+@nuvo-code/core · v1.2.3 · 2026
